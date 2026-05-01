@@ -9,10 +9,11 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-client = MongoClient("mongodb://127.0.0.1:27017/")
+
+client = MongoClient(os.environ.get("MONGO_URI"))
 db     = client["internshipDB"]
 
-UPLOAD_FOLDER = "C:/Users/HP/OneDrive/Desktop/internship/internship-backend/uploads"
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), "uploads")
 
 def parse_json(data):
     return json.loads(json.dumps(data, default=str))
