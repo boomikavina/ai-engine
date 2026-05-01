@@ -1,7 +1,4 @@
 flask
 flask-cors
 pymongo
-scikit-learn
-pandas
-numpy
 pdfplumber
